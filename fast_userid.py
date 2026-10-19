@@ -24,6 +24,11 @@ MOCK_USER = {
     "password": "1234"
 }
 
+@app.get('/')
+async def root():
+    return {"message": "Hello, World!"}
+
+
 @app.post("/login")
 async def login(request: LoginRequest):
     if request.userid != MOCK_USER["userid"]:
